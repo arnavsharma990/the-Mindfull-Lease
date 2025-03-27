@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lease Your Car | Mindfull</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --dark-bg: #121212;
+            --dark-secondary: #1e1e1e;
+            --accent: #d4af37;
+            --text: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background-color: var(--dark-secondary);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 2rem;
+            color: var(--accent);
+        }
+
+        .lease-form-section {
+            padding: 8rem 2rem 4rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-container {
+            background: var(--dark-secondary);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 4rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            background: var(--dark-bg);
+            border: 1px solid var(--accent);
+            border-radius: 5px;
+            color: var(--text);
+        }
+
+        .submit-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--accent);
+            color: var(--dark-bg);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: transform 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .popular-section {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .popular-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .car-card {
+            background: var(--dark-secondary);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .car-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .car-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .car-details {
+            padding: 1.5rem;
+        }
+
+        .car-name {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--accent);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a:visited, a:hover, a:active {
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">MindFull</div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="lease-form-section">
+        <h2 class="section-title">Lease Your Car With Us</h2>
+        <div class="form-container">
+            <form id="leaseForm">
+                <div class="form-group">
+                    <label for="carMake">Car Make</label>
+                    <input type="text" id="carMake" required>
+                </div>
+                <div class="form-group">
+                    <label for="carModel">Car Model</label>
+                    <input type="text" id="carModel" required>
+                </div>
+                <div class="form-group">
+                    <label for="year">Year</label>
+                    <input type="number" id="year" required>
+                </div>
+                <div class="form-group">
+                    <label for="mileage">Mileage</label>
+                    <input type="number" id="mileage" required>
+                </div>
+                <div class="form-group">
+                    <label for="condition">Vehicle Condition</label>
+                    <select id="condition" required>
+                        <option value="">Select Condition</option>
+                        <option value="excellent">Excellent</option>
+                        <option value="good">Good</option>
+                        <option value="fair">Fair</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="description">Additional Details</label>
+                    <textarea id="description" rows="4"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit Your Car</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="popular-section">
+        <h2 class="section-title">Popular Cars Available for Lease</h2>
+        <div class="popular-grid">
+            <div class="car-card">
+                <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e" alt="BMW M4" class="car-image">
+                <div class="car-details">
+                    <h3 class="car-name">BMW M4 Competition</h3>
+                    <div class="car-specs">
+                        <p>503 HP • 3.0L Twin-Turbo</p>
+                        <p>Monthly Revenue: Rs 75,000</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="car-card">
+                <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8" alt="Mercedes AMG GT" class="car-image">
+                <div class="car-details">
+                    <h3 class="car-name">Mercedes AMG GT</h3>
+                    <div class="car-specs">
+                        <p>523 HP • 4.0L V8 Biturbo</p>
+                        <p>Monthly Revenue: Rs 85,000</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="car-card">
+                <img src="https://images.unsplash.com/photo-1614200187524-dc4b892acf16" alt="Porsche 911" class="car-image">
+                <div class="car-details">
+                    <h3 class="car-name">Porsche 911 Carrera</h3>
+                    <div class="car-specs">
+                        <p>379 HP • 3.0L Twin-Turbo</p>
+                        <p>Monthly Revenue: Rs 95,000</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('leaseForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for submitting your car! Our team will contact you shortly.');
+        });
+    </script>
+</body>
+</html>

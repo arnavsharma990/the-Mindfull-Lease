@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lease a Car | CarLease Elite</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --dark-bg: #121212;
+            --dark-secondary: #1e1e1e;
+            --accent: #d4af37;
+            --text: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background-color: var(--dark-secondary);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 2rem;
+            color: var(--accent);
+        }
+
+        .car-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 8rem 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .car-card {
+            background: var(--dark-secondary);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .car-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .car-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .car-details {
+            padding: 1.5rem;
+        }
+
+        .car-name {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .car-specs {
+            margin: 1rem 0;
+        }
+
+        .car-price {
+            font-size: 1.2rem;
+            margin: 1rem 0;
+        }
+
+        .lease-btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: var(--accent);
+            color: var(--dark-bg);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+        }
+
+        .lease-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .filters {
+            padding: 7rem 2rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .filter-select {
+            padding: 0.5rem;
+            background: var(--dark-secondary);
+            color: var(--text);
+            border: 1px solid var(--accent);
+            border-radius: 5px;
+        }
+        a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:visited, a:hover, a:active {
+    color: inherit;
+}
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">CarLease Elite</div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="filters">
+        <div class="filter-group">
+            <select class="filter-select">
+                <option value="">Brand</option>
+                <option value="bmw">BMW</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+                <option value="porsche">Porsche</option>
+            </select>
+            <select class="filter-select">
+                <option value="">Price Range</option>
+                <option value="500-1000">Rs500 - Rs1000/month</option>
+                <option value="1000-1500">Rs1000 - Rs1500/month</option>
+                <option value="1500+">Rs1500+/month</option>
+            </select>
+            <select class="filter-select">
+                <option value="">Vehicle Type</option>
+                <option value="sedan">Sedan</option>
+                <option value="suv">SUV</option>
+                <option value="sports">Sports Car</option>
+                <option value="luxury">Luxury</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="car-grid">
+        <div class="car-card">
+            <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e" alt="BMW M4" class="car-image">
+            <div class="car-details">
+                <h3 class="car-name">BMW M4 Competition</h3>
+                <div class="car-specs">
+                    <p>503 HP • 3.0L Twin-Turbo</p>
+                    <p>0-60 mph: 3.8s</p>
+                </div>
+                <p class="car-price">From Rs 1,299/month</p>
+                <a href="lease-form.html" class="lease-btn">Lease Now</a>
+            </div>
+        </div>
+
+        <div class="car-card">
+            <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8" alt="Mercedes AMG GT" class="car-image">
+            <div class="car-details">
+                <h3 class="car-name">Mercedes AMG GT</h3>
+                <div class="car-specs">
+                    <p>523 HP • 4.0L V8 Biturbo</p>
+                    <p>0-60 mph: 3.7s</p>
+                </div>
+                <p class="car-price">From Rs 1,499/month</p>
+                <a href="lease-form.html" class="lease-btn">Lease Now</a>
+            </div>
+        </div>
+
+        <div class="car-card">
+            <img src="https://images.unsplash.com/photo-1614200187524-dc4b892acf16" alt="Porsche 911" class="car-image">
+            <div class="car-details">
+                <h3 class="car-name">Porsche 911 Carrera</h3>
+                <div class="car-specs">
+                    <p>379 HP • 3.0L Twin-Turbo</p>
+                    <p>0-60 mph: 4.0s</p>
+                </div>
+                <p class="car-price">From Rs 1,699/month</p>
+                <a href="lease-form.html" class="lease-btn">Lease Now</a>
+            </div>
+        </div>
+
+        <div class="car-card">
+            <img src="https://images.unsplash.com/photo-1614200187524-dc4b892acf16" alt="Audi RS7" class="car-image">
+            <div class="car-details">
+                <h3 class="car-name">Audi RS7 Sportback</h3>
+                <div class="car-specs">
+                    <p>591 HP • 4.0L V8</p>
+                    <p>0-60 mph: 3.5s</p>
+                </div>
+                <p class="car-price">From Rs 1,399/month</p>
+                <a href="lease-form.html" class="lease-btn">Lease Now</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        
+    </script>
+</body>
+</html>

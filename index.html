@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Car Leasing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allan:wght@400;700&family=Bebas+Neue&family=Luckiest+Guy&family=Mukta:wght@200;300;400;500;600;700;800&family=Poetsen+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik+Distressed&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-bg: #121212;
+            --dark-secondary: #1e1e1e;
+            --accent: #d4af37;
+            --text: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+  font-weight: 300;
+            background-color: var(--dark-bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+     
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 1s;
+        }
+
+    
+        .navbar {
+    background-color: var(--dark-secondary);
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-links a {
+    position: relative;
+    color: white; 
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background-color: white; 
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+        .logo {
+            font-size: 2rem;
+            color: var(--accent);
+        }
+
+        
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+       
+        .choice-container {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .choice-btn {
+            padding: 1.5rem 3rem;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            background: var(--accent);
+            color: var(--dark-bg);
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .choice-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+       
+        .partners {
+            padding: 4rem 2rem;
+            background: var(--dark-secondary);
+        }
+
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .partner-logo {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+          
+        }
+
+       
+
+        
+        .reviews {
+            padding: 4rem 2rem;
+        }
+
+        .review-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .review-card {
+            background: var(--dark-secondary);
+            padding: 2rem;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .review-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .stars {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+      
+        .footer {
+            background: var(--dark-secondary);
+            padding: 4rem 2rem;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icons a {
+            color: var(--text);
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .choice-container {
+                flex-direction: column;
+            }
+
+            .choice-btn {
+                width: 100%;
+            }
+        }
+        a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:visited, a:hover, a:active {
+    color: inherit;
+}
+    </style>
+</head>
+<body>
+    <div class="preloader">
+        <div class="loader">Feel The Premium...</div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo"><span id="full">Mind</span>Full Lease</div>
+            <style> #full{
+                color: white;
+            } </style>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#partners">Partners</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <h1>Premium Car Leasing Solutions</h1>
+        <p>Experience luxury and convenience with our tailored leasing options</p>
+        <div class="choice-container">
+            <a href="wantcarpage.html" class="choice-btn">I Want a Car</a>
+            <a href="carlease.html" class="choice-btn">I Have a Car</a>
+        </div>
+    </section>
+
+    <section class="partners" id="partners">
+        <h2>Our Premium Partners</h2>
+        <div class="logo-grid">
+            
+            <img src="https://www.bmw.com/content/dam/bmw/marketBMWCOM/bmw_com/categories/automotive-life/explained-m/exlm-og.jpg" alt="BMW" class="partner-logo">
+            <img src="https://pictures.dealer.com/k/keyesaudishermanoaksaoa/0416/d82ee5a1af7fd3baa30a98070b91144ax.jpg" alt="Mercedes" class="partner-logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrcqPxv14lZajcsc15iaykgYS9b4_d296-YA&s" alt="Audi" class="partner-logo">
+          
+        </div>
+    </section>
+
+    <section class="reviews" id="reviews">
+        <h2>Customer Testimonials</h2>
+        <div class="review-container">
+            <div class="review-card">
+                <div class="stars">
+                    ★★★★★
+                </div>
+                <p>"Exceptional service! Made leasing my dream car a breeze."</p>
+                <h4>- John Smith</h4>
+            </div>
+            <div class="review-card">
+                <div class="stars">
+                    ★★★★★
+                </div>
+                <p>"Professional team and premium selection of vehicles."</p>
+                <h4>- Sarah Johnson</h4>
+            </div>
+            <div class="review-card">
+                <div class="stars">
+                    ★★★★★
+                </div>
+                <p>"Best leasing experience I've ever had. Highly recommended!"</p>
+                <h4>- Michael Brown</h4>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="contact">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>CarLease Elite</h3>
+                <p>Your premium car leasing partner</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: mindfullcarlease@gmail.com</p>
+                <p>Phone: +91 958198919</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href=""><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                document.querySelector(".preloader").style.opacity = "0";
+                setTimeout(function() {
+                    document.querySelector(".preloader").style.display = "none";
+                }, 1000);
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
+
+
