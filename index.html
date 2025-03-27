@@ -24,7 +24,7 @@
 
         body {
             font-family: "Poppins", sans-serif;
-  font-weight: 400;
+            font-weight: 400;
             background-color: var(--dark-bg);
             color: var(--text);
             line-height: 1.6;
@@ -335,17 +335,21 @@ a:visited, a:hover, a:active {
             </div>
         </div>
     </footer>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            setTimeout(function() {
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        if (!localStorage.getItem("preloaderShown")) {
+            setTimeout(function () {
                 document.querySelector(".preloader").style.opacity = "0";
-                setTimeout(function() {
+                setTimeout(function () {
                     document.querySelector(".preloader").style.display = "none";
+                    localStorage.setItem("preloaderShown", "true");
                 }, 1000);
             }, 2000);
-        });
-    </script>
+        } else {
+            document.querySelector(".preloader").style.display = "none";
+        }
+    });
+</script>
 </body>
 </html>
 
