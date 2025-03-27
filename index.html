@@ -337,19 +337,22 @@ a:visited, a:hover, a:active {
         </div>
     </footer>
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        if (!localStorage.getItem("preloaderShown")) {
+   document.addEventListener("DOMContentLoaded", function () {
+    if (!localStorage.getItem("preloaderShown")) {
+        setTimeout(function () {
+            document.querySelector(".preloader").style.opacity = "0";
             setTimeout(function () {
-                document.querySelector(".preloader").style.opacity = "0";
-                setTimeout(function () {
-                    document.querySelector(".preloader").style.display = "none";
-                    localStorage.setItem("preloaderShown", "true");
-                }, 1000);
-            }, 2000);
-        } else {
+                document.querySelector(".preloader").style.display = "none";
+                localStorage.setItem("preloaderShown", "true");
+            }, 1000); 
+        }, 3000); 
+    } else {
+        setTimeout(function () {
             document.querySelector(".preloader").style.display = "none";
-        }
-    });
+        }, 500); 
+    }
+});
+
 </script>
 </body>
 </html>
